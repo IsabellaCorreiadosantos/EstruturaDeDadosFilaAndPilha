@@ -31,8 +31,13 @@ public class EstruturaPilha {
 			case 1:
 				leia.nextLine();
 				System.out.println("\nDigite o nome do livro: ");
-				String cliente = leia.nextLine();
-				livro.add(cliente);
+				String livros = leia.nextLine();
+				if(livros.isEmpty()) {
+					System.out.println("\nO nome do livro não foi adicionado\n");
+				}else {
+					livro.add(livros);
+					System.out.println("\nO livro foi adicionado");
+					}
 				break;
 
 			case 2:

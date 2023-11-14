@@ -32,7 +32,12 @@ public class EstruturaFila {
 				leia.nextLine();
 				System.out.println("\nDigite o seu nome: ");
 				String cliente = leia.nextLine();
-				fila.add(cliente);
+				if(cliente.isEmpty()) {
+					System.out.println("\nO nome do cliente não foi adicionado\n");
+				}else {
+					fila.add(cliente);
+					System.out.println("\nCliente foi adicionado na fila\n");
+					}
 				break;
 
 			case 2:
@@ -44,7 +49,6 @@ public class EstruturaFila {
 			case 3:
 				if (fila.isEmpty()) {
 				System.out.println("\nA fila esta vazia ");
-				fila.clear();
 				break;
 				}else {
 					leia.nextLine();
@@ -52,7 +56,7 @@ public class EstruturaFila {
 					String clienterr = leia.nextLine();
 					if (fila.contains(clienterr)) {
 						fila.remove(clienterr);
-						System.out.println("\nO cliente foi chamado! ");
+						System.out.println("\nO cliente foi chamado!  ");
 						System.out.println(fila);
 				
 				}
