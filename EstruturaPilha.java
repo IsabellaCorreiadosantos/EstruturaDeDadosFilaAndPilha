@@ -1,5 +1,6 @@
 package EstruturaDeDados;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -48,18 +49,18 @@ public class EstruturaPilha {
 				break;
 
 			case 3:
-				if (livro.isEmpty()) {
+				if (livro.isEmpty() == true) {
 				System.out.println("\nA pilha esta vazia ");
 					break;
 				}else {
-					leia.nextLine();
-					System.out.println("\nDigite o nome do livro para retirar: ");
-					String retirar = leia.nextLine();
-					if (livro.contains(retirar)) {
-						livro.remove(retirar);
-						System.out.println("\nUm livro foi retirado da pilha ");
-						System.out.println(livro);
+					System.out.printf("Um livro foi retirado da pilha: %s\n",livro.pop());
+					System.out.println("\nsobrou na pilha: \n");
+					for(Iterator<String> it = livro.iterator();it.hasNext();) {
+						System.out.println(it.next());
 					}
+					System.out.println();
+					
+					
 					
 					
 				

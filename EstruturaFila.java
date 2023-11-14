@@ -51,15 +51,15 @@ public class EstruturaFila {
 				System.out.println("\nA fila esta vazia ");
 				break;
 				}else {
-					leia.nextLine();
-					System.out.println("\nDigite o nome do cliente que foi chamado: ");
-					String clienterr = leia.nextLine();
-					if (fila.contains(clienterr)) {
-						fila.remove(clienterr);
-						System.out.println("\nO cliente foi chamado!  ");
-						System.out.println(fila);
+					System.out.printf("\nO (a) cliente %s foi chamado(a)!",fila.poll());
+					System.out.println("\nFila: \n");
+					
+					for(Iterator<String> it = fila.iterator();it.hasNext();) {
+						System.out.println(it.next());
+					}
+					System.out.println();
 				
-				}
+				
 				
 				}
 				
