@@ -1,0 +1,76 @@
+package EstruturaDeDados;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class EstruturaFila {
+
+	public static void main(String[] args) {
+		
+		int op;
+		Queue<String> fila = new LinkedList<String>();
+		
+		Scanner leia = new Scanner(System.in);
+		
+		
+		do {
+
+			System.out.println("\n\t\tOpções");
+			System.out.println("\n--------------------------------------------------------");
+			System.out.println("\n(1) Adicionar cliente na fila");
+			System.out.println("\n(2) Listar todos os clientes na fila");
+			System.out.println("\n(3) Retirar cliente da fila");
+			System.out.println("\n(0) Sair");
+			System.out.println("\n--------------------------------------------------------");
+			System.err.println("\nDigite uma opção: ");
+			op = leia.nextInt();
+
+			switch (op) {
+			case 1:
+				leia.nextLine();
+				System.out.println("\nDigite o seu nome: ");
+				String cliente = leia.nextLine();
+				fila.add(cliente);
+				break;
+
+			case 2:
+				leia.nextLine();
+				System.out.println("\nListar todos os clientes: ");
+				System.out.println(fila);
+				break;
+
+			case 3:
+				if (fila.isEmpty()) {
+				System.out.println("\nA fila esta vazia ");
+				fila.clear();
+				break;
+				}else {
+					leia.nextLine();
+					System.out.println("\nDigite o nome do cliente que foi chamado: ");
+					String clienterr = leia.nextLine();
+					if (fila.contains(clienterr)) {
+						fila.remove(clienterr);
+						System.out.println("\nO cliente foi chamado! ");
+						System.out.println(fila);
+				
+				}
+				
+				}
+				
+				break;
+
+			case 0:
+				System.out.println("\nPrograma Finalizado!");
+				break;
+			default:
+				System.out.println("\nOpcão invalida");
+				
+			}
+		} while (op != 0);
+		
+		
+		
+	}
+}
